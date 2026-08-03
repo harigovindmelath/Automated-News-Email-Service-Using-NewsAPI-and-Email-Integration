@@ -1,8 +1,10 @@
 import requests
 from send_email import send_email
+import os
 
 topic = "tesla"
-api_key = "api_key"
+
+api_key = os.environ.get("NEWS_API_KEY")
 url = "https://newsapi.org/v2/everything?"\
       f"q={topic}&"\
       "from=2023-12-07&sortBy=publishedAt&"\
